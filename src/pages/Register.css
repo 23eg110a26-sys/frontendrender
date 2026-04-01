@@ -1,0 +1,222 @@
+.register-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0f0f13; /* Deep dark premium background */
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #fff;
+}
+
+.register-image-section {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.register-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(15, 15, 19, 0.8) 0%, rgba(255, 94, 58, 0.4) 100%);
+  z-index: 2;
+}
+
+.register-image-text {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 40px;
+  max-width: 500px;
+}
+
+.register-image-text h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #ff5e3a, #ff9900);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.register-image-text p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.register-form-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background-color: #121216;
+  position: relative;
+}
+
+.register-form-container {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(30, 30, 36, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 50px 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.register-form-container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.register-subtitle {
+  color: #a0a0a0;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.85rem;
+  color: #a0a0a0;
+  margin-bottom: 8px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #ff5e3a;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 4px rgba(255, 94, 58, 0.15);
+}
+
+.input-group input:focus + label {
+  color: #ff5e3a;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 16px;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #ff5e3a 0%, #ff2a5f 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px -10px rgba(255, 94, 58, 0.5);
+}
+
+.register-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px -10px rgba(255, 94, 58, 0.7);
+}
+
+.register-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 5px 10px -5px rgba(255, 94, 58, 0.5);
+}
+
+.login-link {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #a0a0a0;
+}
+
+.login-link a {
+  color: #ff5e3a;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+  color: #ff2a5f;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .register-container {
+    flex-direction: column;
+  }
+  
+  .register-image-section {
+    flex: none;
+    height: 30vh;
+  }
+
+  .register-form-section {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .register-image-text {
+    padding: 20px;
+  }
+  
+  .register-image-text h2 {
+    font-size: 2rem;
+  }
+  
+  .register-form-container {
+    padding: 30px 20px;
+    margin-top: -40px; /* Overlap effect */
+    z-index: 10;
+  }
+}
